@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Predictor</title>
+    <style>
+        body { font-family: Arial; background: #f0f0f0; text-align: center; padding: 40px; }
+        .container { background: white; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, button { padding: 10px; margin: 10px; width: 80%; max-width: 300px; }
+        h1 { color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form action="/predict" method="post">
+            <input type="number" step="any" name="age" placeholder="Age" required><br>
+            <input type="number" name="anaemia" placeholder="Anaemia (0 or 1)" required><br>
+            <input type="number" name="creatinine_phosphokinase" placeholder="CPK level" required><br>
+            <input type="number" name="diabetes" placeholder="Diabetes (0 or 1)" required><br>
+            <input type="number" name="ejection_fraction" placeholder="Ejection Fraction" required><br>
+            <input type="number" name="high_blood_pressure" placeholder="High BP (0 or 1)" required><br>
+            <input type="number" step="any" name="platelets" placeholder="Platelets" required><br>
+            <input type="number" step="any" name="serum_creatinine" placeholder="Serum Creatinine" required><br>
+            <input type="number" name="serum_sodium" placeholder="Serum Sodium" required><br>
+            <input type="number" name="sex" placeholder="Sex (0 or 1)" required><br>
+            <input type="number" name="smoking" placeholder="Smoking (0 or 1)" required><br>
+            <input type="number" name="time" placeholder="Follow-up Time (days)" required><br>
+            <button type="submit">Predict</button>
+        </form>
+        <h2>{{ prediction_text }}</h2>
+    </div>
+</body>
+</html>
